@@ -12,3 +12,22 @@ if (!window.matchMedia) {
     dispatchEvent: () => false,
   });
 }
+
+// jsdom has no layout engine, so framer-motion's `whileInView` never fires.
+// A no-op observer keeps ScrollReveal content mounted for tests to query.
+class MockIntersectionObserver implements IntersectionObserver {
+  readonly root = null;
+  readonly rootMargin = '';
+  readonly thresholds: ReadonlyArray<number> = [];
+  readonly scrollMargin = '';
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return [];
+  }
+}
+
+if (!window.IntersectionObserver) {
+  window.IntersectionObserver = MockIntersectionObserver;
+}
