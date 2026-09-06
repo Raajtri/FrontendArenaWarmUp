@@ -4,14 +4,13 @@ import './App.css';
 import { DestinationCard } from './components/DestinationCard';
 import { DestinationModal } from './components/DestinationModal';
 import { EmptyState } from './components/EmptyState';
-import { CtaBanner } from './components/landing/CtaBanner';
 import { FeatureCallout } from './components/landing/FeatureCallout';
 import { FeatureDuo } from './components/landing/FeatureDuo';
 import { FeatureShowcase } from './components/landing/FeatureShowcase';
+import { Finale } from './components/landing/Finale';
 import { Hero } from './components/landing/Hero';
 import { NavBar } from './components/landing/NavBar';
 import { SectionIntro } from './components/landing/SectionIntro';
-import { SiteFooter } from './components/landing/SiteFooter';
 import { SyncSection } from './components/landing/SyncSection';
 import { TrustBadges } from './components/landing/TrustBadges';
 import { VibeFilterBar } from './components/VibeFilterBar';
@@ -86,9 +85,9 @@ function App() {
           className: 'toast',
           duration: 2500,
           style: {
-            background: '#171a2b',
-            color: '#f4f4f8',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            background: '#1c2b22',
+            color: '#f6f2e8',
+            border: 'none',
           },
         }}
       />
@@ -163,8 +162,7 @@ function App() {
         </div>
       </section>
 
-      <CtaBanner onExplore={scrollToPlanner} />
-      <SiteFooter />
+      <Finale onExplore={scrollToPlanner} />
 
       {activeDestination && (
         <DestinationModal

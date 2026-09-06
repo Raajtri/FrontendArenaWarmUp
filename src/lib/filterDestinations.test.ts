@@ -14,8 +14,7 @@ const sample: Destination[] = [
     travelTime: '3h flight',
     rating: 4.8,
     highlights: [],
-    gradient: '',
-    emoji: '🌅',
+    image: '/images/destinations/santorini.jpg',
   },
   {
     id: 'b',
@@ -28,8 +27,7 @@ const sample: Destination[] = [
     travelTime: '4h flight',
     rating: 4.7,
     highlights: [],
-    gradient: '',
-    emoji: '🪂',
+    image: '/images/destinations/queenstown.jpg',
   },
 ];
 

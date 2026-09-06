@@ -21,8 +21,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '3h flight',
     rating: 4.8,
     highlights: ['Sunset in Oia', 'Volcanic wine tasting', 'Caldera boat trip'],
-    gradient: 'linear-gradient(135deg,#2b5876,#4e4376)',
-    emoji: '🌅',
+    image: '/images/destinations/santorini.jpg',
   },
   {
     id: 'queenstown',
@@ -36,8 +35,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '4h flight',
     rating: 4.7,
     highlights: ['Bungy jumping', 'Lake Wakatipu cruise', 'Skyline gondola'],
-    gradient: 'linear-gradient(135deg,#134e5e,#71b280)',
-    emoji: '🪂',
+    image: '/images/destinations/queenstown.jpg',
   },
   {
     id: 'kyoto',
@@ -51,8 +49,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '2h flight',
     rating: 4.9,
     highlights: ['Fushimi Inari Shrine', 'Arashiyama bamboo grove', 'Tea ceremony'],
-    gradient: 'linear-gradient(135deg,#eb3349,#f45c43)',
-    emoji: '⛩️',
+    image: '/images/destinations/kyoto.jpg',
   },
   {
     id: 'lisbon',
@@ -66,8 +63,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '2h flight',
     rating: 4.6,
     highlights: ['Alfama district', 'Tram 28 ride', 'Fado night'],
-    gradient: 'linear-gradient(135deg,#f7971e,#ffd200)',
-    emoji: '🚋',
+    image: '/images/destinations/lisbon.jpg',
   },
   {
     id: 'banff',
@@ -81,8 +77,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '3h flight',
     rating: 4.8,
     highlights: ['Lake Louise canoe', 'Banff hot springs', 'Johnston Canyon hike'],
-    gradient: 'linear-gradient(135deg,#1e3c72,#2a5298)',
-    emoji: '🏔️',
+    image: '/images/destinations/banff.jpg',
   },
   {
     id: 'marrakech',
@@ -96,8 +91,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '3h flight',
     rating: 4.5,
     highlights: ['Jemaa el-Fnaa square', 'Majorelle Garden', 'Souk shopping'],
-    gradient: 'linear-gradient(135deg,#c31432,#240b36)',
-    emoji: '🏮',
+    image: '/images/destinations/marrakech.jpg',
   },
   {
     id: 'maldives',
@@ -111,8 +105,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '5h flight',
     rating: 4.9,
     highlights: ['Overwater bungalow', 'Coral reef snorkeling', 'Sandbank picnic'],
-    gradient: 'linear-gradient(135deg,#00c6ff,#0072ff)',
-    emoji: '🐠',
+    image: '/images/destinations/maldives.jpg',
   },
   {
     id: 'berlin',
@@ -126,8 +119,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '2h flight',
     rating: 4.4,
     highlights: ['East Side Gallery', 'Museum Island', 'Techno club night'],
-    gradient: 'linear-gradient(135deg,#232526,#414345)',
-    emoji: '🎧',
+    image: '/images/destinations/berlin.jpg',
   },
   {
     id: 'costa-rica',
@@ -141,8 +133,7 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '5h flight',
     rating: 4.7,
     highlights: ['Canopy zip-line', 'Cloud forest hike', 'Waterfall swim'],
-    gradient: 'linear-gradient(135deg,#11998e,#38ef7d)',
-    emoji: '🌿',
+    image: '/images/destinations/monteverde.jpg',
   },
   {
     id: 'paris',
@@ -156,7 +147,6 @@ export const DESTINATIONS: Destination[] = [
     travelTime: '1h flight',
     rating: 4.7,
     highlights: ['Seine river walk', 'Louvre highlights', 'Montmartre sunset'],
-    gradient: 'linear-gradient(135deg,#7f7fd5,#86a8e7,#91eae4)',
-    emoji: '🥐',
+    image: '/images/destinations/paris.jpg',
   },
 ];

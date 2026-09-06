@@ -1,3 +1,13 @@
+html {
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 :root {
   color-scheme: light;
   --bg: #f6f2e8;
@@ -71,16 +81,4 @@ button {
 .skip-link:focus {
   left: 0;
   top: 0;
-}
-
-/* Planner section stays dark-themed inside the light landing page. */
-.planner {
-  --bg: #0f1220;
-  --bg-elevated: #171a2b;
-  --text: #f4f4f8;
-  --text-muted: #b3b3c6;
-  --border: rgba(255, 255, 255, 0.1);
-  --accent-soft: rgba(255, 107, 87, 0.18);
-  background: var(--bg);
-  color: var(--text);
 }

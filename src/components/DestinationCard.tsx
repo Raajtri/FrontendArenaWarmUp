@@ -30,14 +30,18 @@ function DestinationCardImpl({
       <button
         type="button"
         className="card__surface"
-        style={{ background: destination.gradient }}
         onClick={() => onOpen(destination)}
         aria-haspopup="dialog"
         aria-label={`View details for ${destination.name}, ${destination.country}`}
       >
-        <span className="card__emoji" aria-hidden="true">
-          {destination.emoji}
-        </span>
+        <img
+          src={destination.image}
+          alt=""
+          className="card__image"
+          loading="lazy"
+          width={400}
+          height={225}
+        />
         <span className="card__body">
           <span className="card__title">{destination.name}</span>
           <span className="card__country">{destination.country}</span>

@@ -13,8 +13,7 @@ export interface Destination {
   travelTime: string;
   rating: number;
   highlights: string[];
-  gradient: string;
-  emoji: string;
+  image: string;
 }
 
 export interface VibeMeta {

@@ -78,10 +78,8 @@ export function DestinationModal({
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.25, ease: 'easeOut' }}
       >
-        <div className="modal__hero" style={{ background: destination.gradient }}>
-          <span aria-hidden="true" className="modal__emoji">
-            {destination.emoji}
-          </span>
+        <div className="modal__hero">
+          <img src={destination.image} alt="" className="modal__image" />
           <button type="button" className="modal__close" onClick={onClose} aria-label="Close dialog">
             <X size={18} aria-hidden="true" />
           </button>

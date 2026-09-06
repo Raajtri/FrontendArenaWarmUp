@@ -15,8 +15,7 @@ const destination: Destination = {
   travelTime: '2h flight',
   rating: 4.9,
   highlights: [],
-  gradient: 'linear-gradient(135deg,#eb3349,#f45c43)',
-  emoji: '⛩️',
+  image: '/images/destinations/kyoto.jpg',
 };
 
 describe('DestinationCard', () => {
