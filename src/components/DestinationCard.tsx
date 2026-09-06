@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from 'framer-motion';
+import { Heart, Plane, Star } from 'lucide-react';
 import { memo } from 'react';
 import type { Destination } from '../types';
 
@@ -14,8 +16,17 @@ function DestinationCardImpl({
   onOpen,
   onToggleFavorite,
 }: DestinationCardProps) {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <li className="card">
+    <motion.li
+      className="card"
+      layout={!prefersReducedMotion}
+      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={prefersReducedMotion ? undefined : { y: -4 }}
+      transition={{ duration: 0.25 }}
+    >
       <button
         type="button"
         className="card__surface"
@@ -32,9 +43,12 @@ function DestinationCardImpl({
           <span className="card__country">{destination.country}</span>
           <span className="card__tagline">{destination.tagline}</span>
           <span className="card__meta">
-            <span>⭐ {destination.rating.toFixed(1)}</span>
-            <span>·</span>
-            <span>{destination.travelTime}</span>
+            <span className="card__meta-item">
+              <Star size={14} aria-hidden="true" fill="currentColor" /> {destination.rating.toFixed(1)}
+            </span>
+            <span className="card__meta-item">
+              <Plane size={14} aria-hidden="true" /> {destination.travelTime}
+            </span>
           </span>
         </span>
       </button>
@@ -49,9 +63,9 @@ function DestinationCardImpl({
         }
         onClick={() => onToggleFavorite(destination.id)}
       >
-        <span aria-hidden="true">{isFavorite ? '♥' : '♡'}</span>
+        <Heart size={16} aria-hidden="true" fill={isFavorite ? 'currentColor' : 'none'} />
       </button>
-    </li>
+    </motion.li>
   );
 }
 

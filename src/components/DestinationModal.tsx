@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from 'framer-motion';
+import { Heart, Plane, Star, X } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import type { Destination } from '../types';
 
@@ -19,6 +21,7 @@ export function DestinationModal({
 }: DestinationModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const titleId = `destination-modal-title-${destination.id}`;
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -57,21 +60,30 @@ export function DestinationModal({
   }, [onClose]);
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div
+    <motion.div
+      className="modal-overlay"
+      onClick={onClose}
+      initial={prefersReducedMotion ? undefined : { opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
+    >
+      <motion.div
         ref={dialogRef}
         className="modal"
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         onClick={(event) => event.stopPropagation()}
+        initial={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.94, y: 12 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
       >
         <div className="modal__hero" style={{ background: destination.gradient }}>
           <span aria-hidden="true" className="modal__emoji">
             {destination.emoji}
           </span>
           <button type="button" className="modal__close" onClick={onClose} aria-label="Close dialog">
-            ✕
+            <X size={18} aria-hidden="true" />
           </button>
         </div>
         <div className="modal__content">
@@ -84,11 +96,15 @@ export function DestinationModal({
           <dl className="modal__facts">
             <div>
               <dt>Rating</dt>
-              <dd>⭐ {destination.rating.toFixed(1)}</dd>
+              <dd>
+                <Star size={14} aria-hidden="true" fill="currentColor" /> {destination.rating.toFixed(1)}
+              </dd>
             </div>
             <div>
               <dt>Travel time</dt>
-              <dd>{destination.travelTime}</dd>
+              <dd>
+                <Plane size={14} aria-hidden="true" /> {destination.travelTime}
+              </dd>
             </div>
             <div>
               <dt>Budget</dt>
@@ -109,10 +125,11 @@ export function DestinationModal({
             aria-pressed={isFavorite}
             onClick={() => onToggleFavorite(destination.id)}
           >
-            {isFavorite ? '♥ In your shortlist' : '♡ Add to shortlist'}
+            <Heart size={16} aria-hidden="true" fill={isFavorite ? 'currentColor' : 'none'} />
+            {isFavorite ? 'In your shortlist' : 'Add to shortlist'}
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

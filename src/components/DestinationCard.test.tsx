@@ -34,7 +34,7 @@ describe('DestinationCard', () => {
 
     expect(screen.getByText('Kyoto')).toBeInTheDocument();
     expect(screen.getByText('Japan')).toBeInTheDocument();
-    expect(screen.getByText('⭐ 4.9')).toBeInTheDocument();
+    expect(screen.getByText('4.9')).toBeInTheDocument();
   });
 
   it('calls onOpen when the card is activated via keyboard', async () => {
